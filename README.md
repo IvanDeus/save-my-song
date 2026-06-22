@@ -126,10 +126,10 @@ usage: Save_my_song.py [-h] [-o OUTPUT] [--check] [-t THRESHOLD] [-q] input
 AudioSeal uses a neural network to generate a **frequency-domain watermark** that sits below the threshold of human perception. The watermark survives common audio transformations (compression, re-encoding, minor edits) while remaining completely inaudible.
 
 ```
-┌────────────┐      ┌───────────┐      ┌─────────────────┐
+┌────────────┐     ┌───────────┐      ┌─────────────────┐
 │  Original  │ ──▶ │ Generator │ ──▶  │  Watermarked    │
-│  audio.wav │      │  (embed)  │       │  protected.wav │
-└────────────┘      └───────────┘      └─────────────────┘
+│  audio.wav │     │  (embed)  │      │  protected.wav  │
+└────────────┘     └───────────┘      └─────────────────┘
                                               │
                                               ▼
                                       ┌───────────┐
