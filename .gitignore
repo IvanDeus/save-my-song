@@ -1,0 +1,5 @@
+__Save_my_song.py
+__app.py
+__pycache__/
+*.wav
+*.log
