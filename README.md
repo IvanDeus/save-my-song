@@ -19,7 +19,7 @@ Embed an **inaudible watermark** into any WAV file to prove ownership — or ver
 
 ## 📦 Requirements
 
-- **Python** 3.8+
+- **Python** 3.12+
 - **PyTorch** and **torchaudio**
 - **AudioSeal**
 
@@ -32,21 +32,24 @@ pip install torch torchaudio audioseal
 
 ## 🚀 Usage
 
-### Embed a watermark
+### Embed a watermark with ownership proof
 
 ```bash
-# Watermark a track → outputs protected_<filename>.wav
-python Save_my_song.py my_track.wav
+# Watermark a track and bind it to your email
+python Save_my_song.py my_track.wav --email owner@example.com
 
 # Specify a custom output path
-python Save_my_song.py my_track.wav -o sealed_track.wav
+python Save_my_song.py my_track.wav -o sealed_track.wav --email owner@example.com
 ```
 
-### Check for a watermark
+### Check for a watermark & verify ownership
 
 ```bash
 # Detect watermark in a file
 python Save_my_song.py --check sealed_track.wav
+
+# Verify if a specific email matches the embedded ownership hash
+python Save_my_song.py --check sealed_track.wav --verify-email owner@example.com
 
 # Use a stricter detection threshold (0.0–1.0)
 python Save_my_song.py --check sealed_track.wav -t 0.7
