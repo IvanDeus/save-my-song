@@ -145,4 +145,13 @@ AudioSeal uses a neural network to generate a **frequency-domain watermark** tha
 - **Generator model** — `audioseal_wm_16bits` — embeds 16 bits of hidden information
 - **Detector model** — `audioseal_detector_16bits` — recovers the probability + message
 
+### 🔐 About the 16-bit Email Hash
+AudioSeal's payload capacity is strictly **16 bits** (65,536 combinations). An email address cannot fit directly. This script solves it by:
+1. Hashing your email with `SHA-256`
+2. Taking the first 16 bits as a deterministic fingerprint
+3. Embedding that fingerprint into the audio
+4. During verification, re-hashing the claimed email and comparing it to the decoded bits
+
+This provides a lightweight, reproducible proof-of-ownership mechanism suitable for creator tracking and attribution. For enterprise-grade cryptographic guarantees, consider pairing this with external metadata registries.
+
 2026 [ ivan deus ]
