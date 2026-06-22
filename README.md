@@ -20,7 +20,7 @@ Embed an **inaudible watermark** into any WAV file to prove ownership — or ver
 
 - **Python** 3.8+
 - **PyTorch** and **torchaudio**
-- **AudioSeal** (`audioseal`)
+- **AudioSeal**
 
 ```bash
 pip install torch torchaudio audioseal
