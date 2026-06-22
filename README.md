@@ -12,6 +12,7 @@ Embed an **inaudible watermark** into any WAV file to prove ownership — or ver
 |---|---|
 | 🎵 **Embed mode** | Inject a 16-bit watermark that's imperceptible to human hearing |
 | 🔍 **Check mode** | Detect and decode a watermark from any audio file |
+| 📧 **Ownership Proof** | Hash your email into the 16-bit payload to cryptographically tie the file to you |
 | 🎨 **Pretty CLI** | Colored output, progress feedback, timing, and file stats |
 | ⚙️ **Flexible** | Custom output paths, adjustable detection thresholds, quiet mode |
 | 🛡️ **Robust** | Input validation, graceful error handling, meaningful exit codes |
