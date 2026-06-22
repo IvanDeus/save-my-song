@@ -132,7 +132,7 @@ usage: Save_my_song.py [-h] [-o OUTPUT] [--check] [--email EMAIL] [--verify-emai
 
 ## 🧠 How It Works
 
-AudioSeal uses a neural network to generate a **frequency-domain watermark** that sits below the threshold of human perception. The watermark survives common audio transformations (compression, re-encoding, minor edits) while remaining completely inaudible.
+AudioSeal uses a neural network to generate a **frequency-domain watermark** that sits below the threshold of human perception. The watermark survives common audio transformations (compression, re-encoding, minor edits) while remaining completely inaudible. Your ownership watermark can still be present if a file is converted to a mp3 and/or shortened (but the beginning of the song is intact). 
 
 ```
 ┌────────────┐     ┌───────────┐      ┌─────────────────┐
