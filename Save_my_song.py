@@ -46,7 +46,7 @@ BANNER = r"""
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="Save_my_song.py",
-        description="Embed or detect an AudioSeal watermark in a WAV file. Script made by [ ivan deus ].",
+        description="Embed or detect an AudioSeal watermark in a WAV file. Developed by [ ivan deus ].",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__,
     )
