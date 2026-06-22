@@ -68,6 +68,8 @@ python Save_my_song.py --check sealed_track.wav -t 0.7
   ℹ Sample rate 44100 Hz  •  channels 2  •  duration 198.35 s
   ℹ Loading generator model …
   ✔ Generator ready
+  ℹ Hashing ownership email → 16-bit payload …
+  ✔ Ownership hash ready for: owner@example.com
   ℹ Generating watermark …
   ✔ Watermark generated in 3.21 s
   ℹ Saving → protected_my_track.wav
@@ -87,7 +89,8 @@ python Save_my_song.py --check sealed_track.wav -t 0.7
   ┌──────────────────────────────────────
   │  Detection probability : 0.9987
   │  Threshold             : 0.5
-  │  Decoded message       : 1010110011001101
+  │  Decoded 16-bit hash   : 1010110011001101
+  │  Email verification    : MATCH ✔ (owner@example.com)
   │  Result                : WATERMARK DETECTED ✔
   └──────────────────────────────────────
   ℹ Analysis completed in 1.84 s
@@ -96,7 +99,7 @@ python Save_my_song.py --check sealed_track.wav -t 0.7
 ## ⚙️ CLI Reference
 
 ```
-usage: Save_my_song.py [-h] [-o OUTPUT] [--check] [-t THRESHOLD] [-q] input
+usage: Save_my_song.py [-h] [-o OUTPUT] [--check] [--email EMAIL] [--verify-email EMAIL] [-t THRESHOLD] [-q] input
 ```
 
 | Argument | Description |
@@ -104,6 +107,8 @@ usage: Save_my_song.py [-h] [-o OUTPUT] [--check] [-t THRESHOLD] [-q] input
 | `input` | Path to the input WAV file |
 | `-o`, `--output` | Output path for watermarked file (default: `protected_<input>`) |
 | `--check` | Detection mode — check for a watermark instead of embedding |
+| `--email` | Owner email to embed as a 16-bit ownership hash (embed mode) |
+| `--verify-email` | Email to verify against the detected watermark hash (check mode) |
 | `-t`, `--threshold` | Detection threshold, 0.0–1.0 (default: `0.5`) |
 | `-q`, `--quiet` | Suppress the banner and informational messages |
 
