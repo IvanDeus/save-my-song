@@ -48,6 +48,7 @@ BANNER = r"""
 # ──────────────────────── 16-bit email hashing ───────────────────────
 def _email_to_16bit_tensor(email: str, device):
     """Deterministically hash an email to a 16-bit binary tensor [1, 16]."""
+    import torch  # ← Fixed: lazy import to match the rest of the script
     h = hashlib.sha256(email.encode('utf-8')).digest()
     val = int.from_bytes(h[:2], byteorder='big')  # Take first 2 bytes = 16 bits
     bits = [(val >> (15 - i)) & 1 for i in range(16)]
